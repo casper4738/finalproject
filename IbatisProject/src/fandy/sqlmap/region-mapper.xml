@@ -1,0 +1,48 @@
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL MAP 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="region">
+	<insert id="insert" parameterClass="fandy.bean.RegionBean">
+		INSERT INTO REGIONS_DUMMY VALUES (#regionId#, #regionName#)
+	</insert>
+	<update id="update" parameterClass="fandy.bean.RegionBean">
+		UPDATE REGIONS_DUMMY SET 
+		REGION_NAME=#regionName# 
+		WHERE REGION_ID=#regionId#
+	</update>
+	<delete id="delete" parameterClass="java.lang.Integer">
+		DELETE FROM REGIONS_DUMMY WHERE REGION_ID=#id#
+	</delete>
+	<select id="getNewRegionId" resultClass="java.lang.Integer">
+		SELECT NVL(MAX(REGION_ID)+1, 1) FROM REGIONS_DUMMY
+	</select>
+	<select id="get" resultClass="fandy.bean.RegionBean" parameterClass="java.lang.Integer">
+		SELECT REGION_ID AS regionId, 
+		REGION_NAME AS regionName 
+		FROM REGIONS_DUMMY WHERE REGION_ID=#id#
+	</select>
+	<select id="getListByCol" resultClass="fandy.bean.RegionBean" parameterClass="java.util.Map">
+		SELECT * FROM  (SELECT page.*, ROWNUM rnum FROM 
+		(SELECT REGION_ID AS regionId, 
+		REGION_NAME AS regionName 
+		FROM REGIONS_DUMMY 
+	    <dynamic prepend="WHERE">
+	        <isNotNull property="column">
+		       	<isNotEqual property="column" compareValue="SHOW_ALL">
+			          LOWER($column$) LIKE LOWER('%'||#value#||'%')
+				</isNotEqual> 
+	        </isNotNull>
+	    </dynamic>
+	    ORDER BY REGION_ID ASC) page 
+	    WHERE ROWNUM <![CDATA[ <= ]]> #pageEnd#) WHERE rnum <![CDATA[ >= ]]> #pageBegin#
+	</select>
+	<select id="getCountListByCol" resultClass="java.lang.Integer" parameterClass="java.util.Map">
+		SELECT COUNT(1) FROM REGIONS_DUMMY 
+		 <dynamic prepend="WHERE">
+	        <isNotNull property="column">
+		        <isNotEqual property="column" compareValue="SHOW_ALL">
+			          LOWER($column$) LIKE LOWER('%'||#value#||'%')
+				</isNotEqual> 
+	        </isNotNull>
+	    </dynamic>
+	</select>
+</sqlMap>

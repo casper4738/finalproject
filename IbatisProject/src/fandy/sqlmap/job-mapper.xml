@@ -1,0 +1,9 @@
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL MAP 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="job">
+	<select id="getListOptionJob" resultClass="fandy.bean.OptionBean">
+		SELECT JOB_ID AS key, 
+		JOB_TITLE AS value 
+		FROM JOBS
+	</select>
+</sqlMap>
