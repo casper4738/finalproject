@@ -7,14 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Fandy Adam 
-casperadam91@gmail.com
 
-
-HAHIIIA
-aw
-dwadwadawd
-a
-wdawd
 </body>
 </html>
