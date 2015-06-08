@@ -7,15 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-adawd
-
-adawd
-aw
-da
-wd
-awd
-aw
-d
-wa
+Fandy Adam Tes 
 </body>
 </html>
