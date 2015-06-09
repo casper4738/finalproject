@@ -7,21 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-aSdawd
-awd
-awd
-awd
-awd
-aw
-d
-awd
-awd
-aw
-daw
-da
-wd
-aw
-d
-awd
+Frans Darmawan
 </body>
 </html>
