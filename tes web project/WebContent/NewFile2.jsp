@@ -6,27 +6,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-awdawd
-aadawdaw
-wdawd
-awdawsdwadawdawd
-awdawawdasasd
-
-<body>
-Fandy Adam
-awdaw
-
-aaaa
-
-awdawd
-x
-x
-x
-x
-x
-x
-x
-
-xx
-</body>
+asdasd
 </html>
